@@ -21,7 +21,7 @@ public class SimpleHttpServer {
             @Override
             public void handle(HttpExchange httpExchange) throws IOException {
                 try {
-                    Controller controller = (Controller) clazz.getConstructor().newInstance();
+                    SimpleHttpServerController controller = (SimpleHttpServerController) clazz.getConstructor().newInstance();
                     String text = controller.init(httpExchange);
                     httpExchange.sendResponseHeaders(200, text.length());
                     OutputStream os = httpExchange.getResponseBody();

@@ -1,5 +1,5 @@
 import com.sun.net.httpserver.HttpExchange;
 
-public interface Controller {
+public interface SimpleHttpServerController {
       String init(HttpExchange httpExchange);
 }
