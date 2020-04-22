@@ -16,6 +16,12 @@ public class SimpleHttpServer {
         server.start();
     }
 
+    public SimpleHttpServer(String ip, int port) throws IOException {
+        this.server = HttpServer.create(new InetSocketAddress(ip, port), 0);
+        server.setExecutor(null);
+        server.start();
+    }
+
     public void path(String route, Class clazz) {
         server.createContext(route, new HttpHandler() {
             @Override
